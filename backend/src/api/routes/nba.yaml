@@ -1,0 +1,83 @@
+GetGamesByDate:
+  summary: Query games by date.
+  description: >
+    This resource represents list of games.
+    Each game is identified by a numeric `id`, 
+    which is also equal to it's ESPN source data id
+  get:
+    operationId: src.api.routes.nba.get_games_by_date
+    parameters:
+      - $ref: '../components/request_parameters.yaml#/Date'
+    tags: [ Games ]
+    summary: Gets a games by date.
+    description: >
+      A detailed description of the operation.
+      Use markdown for rich text representation,
+      such as **bold**, *italic*, and [links](https://swagger.io).
+    responses:
+      '200':
+        description: Successful operation
+        content:
+          application/json:
+            schema:
+              type: object
+    externalDocs:
+      description: Learn more about user operations provided by this API.
+      url: http://api.example.com/docs/user-operations/
+
+
+
+GameByID:
+  summary: Query games by date.
+  description: >
+    This resource represents list of games.
+    Each game is identified by a numeric `id`, 
+    which is also equal to it's ESPN source data id
+  get:
+    operationId: src.api.routes.nba.get_game_details
+    parameters:
+      - $ref: '../components/request_parameters.yaml#/GameID'
+    tags: [ Games ]
+    summary: Gets a games by ID.
+    description: >
+      A detailed description of the operation.
+      Use markdown for rich text representation,
+      such as **bold**, *italic*, and [links](https://swagger.io).
+    responses:
+      '200':
+        description: Successful operation
+        content:
+          application/json:
+            schema:
+              type: object
+    externalDocs:
+      description: Learn more about user operations provided by this API.
+      url: http://api.example.com/docs/user-operations/
+
+# Game:
+#   summary: Represents a game
+#   description: >
+#     This resource represents an individual game.
+#     Each game is identified by a numeric `id`, 
+#     which is also equal to it's ESPN source data id
+#   get:
+#     tags: [ Games ]
+#     summary: Gets a game by ID.
+#     description: >
+#       A detailed description of the operation.
+#       Use markdown for rich text representation,
+#       such as **bold**, *italic*, and [links](https://swagger.io).
+#     operationId: nba.get_game_details
+#     parameters:
+#       - $ref: '../components/request_parameters.yaml#/Date'
+#       responses:
+#         '200':
+#           description: Successful operation
+#           content:
+#             application/json:
+#               schema:
+#                 type: object
+#       externalDocs:
+#         description: Learn more about user operations provided by this API.
+#         url: http://api.example.com/docs/user-operations/
+

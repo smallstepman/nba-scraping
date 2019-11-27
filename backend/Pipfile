@@ -1,0 +1,22 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+connexion = {extras = ["swagger-ui"],version = "*"}
+flask-sqlalchemy = "*"
+flask-marshmallow = "*"
+flask-admin = "*"
+marshmallow-sqlalchemy = "*"
+python-dotenv = "*"
+pytest = "*"
+pytest-flask = "*"
+pytest-dotenv = "*"
+prance = "*"
+yapf = "*"
+
+[requires]
+python_version = "3.8"

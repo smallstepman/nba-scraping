@@ -1,0 +1,17 @@
+Date:
+  name: date
+  in: query
+  description: Date in YYYY-MM-DD format
+  required: true
+  schema:
+    type: string
+    format: date
+
+GameID:
+  name: game_id
+  in: path
+  description: Game ID
+  required: true
+  schema:
+    type: integer
+    # format: int64

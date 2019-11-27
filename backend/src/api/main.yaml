@@ -1,0 +1,19 @@
+openapi: "3.0.0"
+
+info:
+  version: 1.0.0
+  title: NBA Swagger 
+  license:
+    name: MIT
+
+servers:
+  - url: http://localhost:5000/api/v1
+
+paths:
+  /games:
+    $ref: 'routes/nba.yaml#/GetGamesByDate'
+
+  /games/{game_id}/details:
+    $ref: './routes/nba.yaml#/GameByID'
+
+  
