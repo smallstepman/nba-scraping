@@ -53,31 +53,3 @@ GameByID:
     externalDocs:
       description: Learn more about user operations provided by this API.
       url: http://api.example.com/docs/user-operations/
-
-# Game:
-#   summary: Represents a game
-#   description: >
-#     This resource represents an individual game.
-#     Each game is identified by a numeric `id`, 
-#     which is also equal to it's ESPN source data id
-#   get:
-#     tags: [ Games ]
-#     summary: Gets a game by ID.
-#     description: >
-#       A detailed description of the operation.
-#       Use markdown for rich text representation,
-#       such as **bold**, *italic*, and [links](https://swagger.io).
-#     operationId: nba.get_game_details
-#     parameters:
-#       - $ref: '../components/request_parameters.yaml#/Date'
-#       responses:
-#         '200':
-#           description: Successful operation
-#           content:
-#             application/json:
-#               schema:
-#                 type: object
-#       externalDocs:
-#         description: Learn more about user operations provided by this API.
-#         url: http://api.example.com/docs/user-operations/
-

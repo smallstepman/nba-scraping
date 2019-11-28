@@ -17,6 +17,8 @@ pytest-flask = "*"
 pytest-dotenv = "*"
 prance = "*"
 yapf = "*"
+psycopg2-binary = "*"
+flask-migrate = "*"
 
 [requires]
 python_version = "3.8"
