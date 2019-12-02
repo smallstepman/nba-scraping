@@ -24,7 +24,7 @@ WORKDIR /scraper
 
 ARG dbcs
 ENV POSTGRES_CONNECTION_STRING=$dbcs
-ENV QUERYDATE=2019-10-12
+
 
 CMD python /scraper/selenium_scraper.py
 

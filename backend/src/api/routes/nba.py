@@ -7,7 +7,7 @@ def get_games_by_date(date):
         Game.date == date
     )
     game_schema = GameSchema(many=True)
-
+    # print(games)
     return jsonify(game_schema.dump(games))
 
 

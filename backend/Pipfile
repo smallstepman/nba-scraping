@@ -19,6 +19,7 @@ prance = "*"
 yapf = "*"
 psycopg2-binary = "*"
 flask-migrate = "*"
+flask-cors = "*"
 
 [requires]
 python_version = "3.8"

@@ -6,7 +6,7 @@ import connexion
 from .api import get_bundled_specs
 from .admin import *
 from .models import *
-from .extensions import db, admin, migrate, marshall
+from .extensions import db, admin, cors, marshall
 from .commands import create_db_command, insert_records_command
 
 def create_app():
@@ -22,7 +22,6 @@ def create_app():
         SQLALCHEMY_TRACK_MODIFICATIONS=False,
         # SQLALCHEMY_ECHO=True,
         SECRET_KEY=os.environ.get('SECRET_KEY')
-        
     )
 
     app.cli.add_command(create_db_command)
@@ -30,7 +29,7 @@ def create_app():
 
     db.init_app(app)
     admin.init_app(app)
-    migrate.init_app(app, db)
     marshall.init_app(app)
+    cors.init_app(app)
 
     return app

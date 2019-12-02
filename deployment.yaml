@@ -1,0 +1,73 @@
+# frontend
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  labels:
+    app: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: frontend
+        image: registry.gitlab.com/lekkiduchem/nba-exercise:frontend-0.2
+        ports:
+        - containerPort: 80
+---
+# backend 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  labels:
+    app: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: registry.gitlab.com/lekkiduchem/nba-exercise:backend-1.2
+        ports:
+        - containerPort: 5000
+---
+# services
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+  labels: 
+    app: frontend-service
+spec:
+  ports:
+  - port: 80
+    name: frontend-service
+  selector:
+    app: frontend
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+  labels: 
+    app: backend-service
+spec:
+  ports:
+  - port: 5000
+    targetPort: 5000
+    name: backend-service
+  selector:
+    app: backend

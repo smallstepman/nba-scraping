@@ -1,7 +1,12 @@
 from flask_admin.contrib.sqla import ModelView
 
 from .extensions import db, admin
-from .models.game import Game, QuarterScore
+from .models.game import Game, QuarterScore, Team
 
-admin.add_view(ModelView(Game, db.session))
-admin.add_view(ModelView(QuarterScore, db.session))
+class MyView(ModelView):
+    column_display_pk = True 
+    column_display_fk = True 
+
+admin.add_view(MyView(Game, db.session))
+admin.add_view(MyView(QuarterScore, db.session))
+admin.add_view(MyView(Team, db.session))
